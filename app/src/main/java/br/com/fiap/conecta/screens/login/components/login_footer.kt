@@ -1,4 +1,4 @@
-package br.com.fiap.conecta.login.components
+package br.com.fiap.conecta.screens.login.components
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -11,16 +11,17 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 
 @Composable
 
 fun LoginFooter(
-    onLoginGoogle: () -> Unit,
-    onAdvance: () -> Unit
+    navController: NavController,
+    onLoginGoogle: () -> Unit
 ) {
 
     Column {
-        Button(onClick = {onAdvance() },
+        Button(onClick = {navController.navigate("menu")},
             colors = ButtonDefaults
                 .buttonColors(
                     containerColor = Color(0xFFFF9800),

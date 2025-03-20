@@ -1,4 +1,4 @@
-package br.com.fiap.conecta.login.components
+package br.com.fiap.conecta.screens.login.components
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -18,7 +18,7 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 
-fun LoginForm (
+fun loginform (
     email: String,
     onEmailChange: (String) -> Unit,
     senha: String,

@@ -1,4 +1,4 @@
-package br.com.fiap.conecta.login.components
+package br.com.fiap.conecta.screens.login.components
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -20,7 +20,7 @@ fun LoginHeader (){
         modifier = Modifier
             .padding(50.dp)
             .fillMaxWidth()
-//                    .background(color = Color.Red)){
+
     ) {
         Text(
             text = buildAnnotatedString {

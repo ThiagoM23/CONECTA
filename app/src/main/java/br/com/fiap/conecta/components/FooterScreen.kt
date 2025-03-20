@@ -1,6 +1,7 @@
 package br.com.fiap.conecta.components
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -14,22 +15,25 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import br.com.fiap.conecta.R
 
 @Composable
 
-fun FooterScreen () {
+fun FooterScreen (
+    navController: NavController
+) {
     Row(
-        horizontalArrangement = Arrangement.SpaceAround,
+        horizontalArrangement = Arrangement.SpaceEvenly,
         modifier = Modifier
             .fillMaxWidth()
+            .background(color = Color.White)
 
     ) {
 
         Button(
-            onClick = {},
+            onClick = {navController.navigate("menu")},
             colors = ButtonDefaults.buttonColors(
                 containerColor = Color.Transparent,
                 contentColor = Color.Black
@@ -42,7 +46,7 @@ fun FooterScreen () {
                 Image(
                     painter = painterResource(id = R.drawable.icon_home),
                     contentDescription = "Icone Inicio",
-                    modifier = Modifier.size(40.dp)
+                    modifier = Modifier.size(25.dp)
                 )
                 Text("Início")
             }
@@ -50,7 +54,7 @@ fun FooterScreen () {
         }
 
         Button(
-            onClick = {},
+            onClick = {navController.navigate("mapa")},
             colors = ButtonDefaults.buttonColors(
                 containerColor = Color.Transparent,
                 contentColor = Color.Black
@@ -63,14 +67,14 @@ fun FooterScreen () {
                 Image(
                     painter = painterResource(id = R.drawable.icon_bussola),
                     contentDescription = "Icone Mapa",
-                    modifier = Modifier.size(40.dp)
+                    modifier = Modifier.size(25.dp)
                 )
                 Text("Mapa")
             }
         }
 
         Button(
-            onClick = {},
+            onClick = {navController.navigate("busca")},
             colors = ButtonDefaults.buttonColors(
                 containerColor = Color.Transparent,
                 contentColor = Color.Black
@@ -83,13 +87,13 @@ fun FooterScreen () {
                 Image(
                     painter = painterResource(id = R.drawable.icon_lupa),
                     contentDescription = "Icone busca",
-                    modifier = Modifier.size(40.dp)
+                    modifier = Modifier.size(25.dp)
                 )
                 Text("Busca")
             }
         }
         Button(
-            onClick = {},
+            onClick = {navController.navigate("perfil")},
             colors = ButtonDefaults.buttonColors(
                 containerColor = Color.Transparent,
                 contentColor = Color.Black
@@ -102,7 +106,7 @@ fun FooterScreen () {
                 Image(
                     painter = painterResource(id = R.drawable.icon_person),
                     contentDescription = "Icone home",
-                    modifier = Modifier.size(40.dp)
+                    modifier = Modifier.size(25.dp)
                 )
                 Text("Perfil")
             }
@@ -111,10 +115,4 @@ fun FooterScreen () {
 
     }
 
-}
-@Preview (showBackground = true, showSystemUi = true)
-@Composable
-
-fun FooterScreenPreview (){
-    FooterScreen()
 }
